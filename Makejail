@@ -2,7 +2,7 @@ ARG pkg_conf?
 ARG pkg_name=FreeBSD
 
 RAW if [ -n "${pkg_conf}" ]; then
-        RAW echo "===> Configuring pkg.conf(5): ${pkg_conf} -> /usr/local/etc/pkg/${pkg_name}.conf ..."
-        CMD mkdir -p /usr/local/etc/pkg
-        COPY "${pkg_conf}" "/usr/local/etc/pkg/${pkg_name}.conf"
+        RAW echo "===> Configuring pkg.conf(5): ${pkg_conf} -> /usr/local/etc/pkg/repos/${pkg_name}.conf ..."
+        CMD mkdir -p /usr/local/etc/pkg/repos
+        COPY "${pkg_conf}" "/usr/local/etc/pkg/repos/${pkg_name}.conf"
 RAW fi
